@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Brain connections</title>
+        <style>
+            #tit { 
+              color: black;
+            }
+            
+            .chart rect {
+              stroke: black;
+            }
+            .chart2 rect {
+              stroke: black;
+            }
+
+            body {
+            background-color: white;
+            }
+           
+           #seltit{
+            color:black;
+            display: inline;
+            position:absolute;
+            top:60px;
+            left:800px;
+           }
+           #dropdown{
+            width: 375px;
+            height: 440px; 
+            font-size:19px;
+            display: inline;
+            position:absolute;
+            top:110px;
+            left:800px;
+           }
+           text {
+          fill: black;
+          font-size:10px;
+          }
+
+          #container {
+            display: inline;
+            position:absolute;
+            top:565px;
+            left:1140px;
+           
+        }
+
+        #color-bar {
+          width: 20px;
+          height: 250px;
+          background: linear-gradient(to top, white, red);
+          margin-right: 30px;
+        }
+
+        #caxis {
+          line-height: 45px;
+          font-size: 15px;
+          display: inline;
+            position:absolute;
+            top:-10px;
+            left:30px;
+        }
+
+        #caxis span {
+          display: block;
+          text-align: center;
+        }
+        
+        #cspan{
+          display: inline-block;
+            transform: translate(0, 100%) rotate(-90deg);
+            transform-origin: left top;
+            padding-right: 1px;
+            font-size: 13px;
+            position:absolute;
+            top:770px;
+            left:1120px;
+        }
+        #xaxis {
+          line-height: 25px;
+          font-size: 10px;
+          display: inline;
+            position:absolute;
+            top:550px;
+            left:10px;
+        }
+
+        #xaxis span {
+          display: block;
+          text-align: center;
+          
+        }
+          </style>
+
+
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        
+    </head>
+    <body>
+        
+        <h1 id="tit" >Brain connections of human white matter with diffusion tractography</h1>
+       
+        <img id="oriimg" src="img/blank_trans80.png" style="width: 750px;height: 466px; "/>    
+        
+        <h2 id="seltit" >AAL3 region:</h2>
+        <select name="picture" id="dropdown"  multiple  onchange="changeimg()" >
+            <option value="" disabled="disabled">Region</option>
+            <option value="Frontal_Med_Orb_L">Left Superior frontal gyrus,medial orbital</option>
+            <option value="Rectus_L">Left Gyrus rectus</option>
+            <option value="OFCmed_L">Left Medial orbital gyrus</option>
+            <option value="OFCant_L">Left Anterior orbital gyrus</option>
+            <option value="OFCpost_L">Left Posterior orbital gyrus</option>
+            <option value="OFClat_L">Left Lateral orbital gyrus</option>
+            <option value="Frontal_Inf_Orb_2_L">Left IFG pars orbitalis 2</option>
+            <option value="Frontal_Inf_Oper_L">Left Inferior frontal gyrus,opercular part</option>
+            <option value="Frontal_Inf_Tri_L">Left Inferior frontal gyrus,triangular part</option>
+
+            <option value="Frontal_Med_Orb_R">Right Superior frontal gyrus,medial orbital</option>
+            <option value="Rectus_R">Right Gyrus rectus</option>
+            <option value="OFCmed_R">Right Medial orbital gyrus</option>
+            <option value="OFCant_R">Right Anterior orbital gyrus</option>
+            <option value="OFCpost_R">Right Posterior orbital gyrus</option>
+            <option value="OFClat_R">Right Lateral orbital gyrus</option>
+            <option value="Frontal_Inf_Orb_2_R">Right IFG pars orbitalis 2</option>
+            <option value="Frontal_Inf_Oper_R">Right Inferior frontal gyrus,opercular part</option>
+            <option value="Frontal_Inf_Tri_R">Right Inferior frontal gyrus,triangular part</option>
+
+            <!-- <option value="test">test</option> -->
+
+
+
+        </select>
+
+
+
+      <div id="cspan"><span>Normalized streamline number (mean)</span></div>
+        <div id="container">
+          
+          <div id="color-bar">
+            
+          </div>
+          <div id="caxis">
+            
+            <span>1</span>
+            <span>0.8</span>
+            <span>0.6</span>
+            <span>0.4</span>
+            <span>0.2</span>
+            <span>0</span>
+          </div>
+        </div>  
+        <p></p>
+        
+
+        <div id ="xaxis">
+        <span>Hemispheres</span>
+        <span >Left </span>
+        
+        <span >Right </span>
+      
+
+        </div> 
+
+        <script src='script.js'></script>
+
+        
+       <p style=" font-size: 10px;position:absolute;top:790px;">*excluding supramarginal and angular gyri</p>
+      <!-- <p style=" font-size: 15px;position:absolute;top:800px;">Normalized streamline number (mean)</p> -->
+       
+
+    </body>
+</html>
