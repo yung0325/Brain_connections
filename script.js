@@ -160,6 +160,7 @@ appending.exit().remove();
 
 // 生成初始圖表
 updateLegend1(ori);
+document.write('<br>');
 
 
 // ------------------------------------
@@ -211,6 +212,7 @@ appending.exit().remove();
 
 // 生成初始圖表
 updateLegend2(ori);
+document.write('<br>');
 
 
 
@@ -245,4 +247,4 @@ let y = 0;
   }
 
   document.querySelector(".raxis").innerHTML = Raxis;
-
+document.write('<br>');
